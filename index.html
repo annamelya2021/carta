@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta de admisión</title>
+    <link rel="stylesheet" href="css/carta.css" />
+
+    <link rel="stylesheet" href="css/animacion.css" />
+
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <figure class="visible-on-hover" onClick="togglePlay()">
+      <img
+        id="image_bg"
+        src="img/escudo.png"
+        alt="escudo de Hogwarts"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      />
+    </figure>
+    <header class="visible-on-hover">
+      <article class="hidden">
+        <h1>ESCUELA de MAGIA Y HECHICERÍA de HOGWARTS</h1>
+        <h2>DIRECTOR: ALBUS DUMBLEDORE</h2>
+        <p>
+          (Orden de Merlin, Primera Clase, Gran Cruz de la Orden del Fénix y
+          Gran Cruz de la Orden del Mérito Mágico)
+        </p>
+      </article>
+    </header>
+    <main>
+      <section class="visible-on-hover">
+        <article class="hidden">
+          <p>Señor(a): <strong>[[nombre]]</strong></p>
+          <p>
+            Le informamos que ha sido aceptado(a) en la Escuela de Magia y
+            Hechicería de Hogwarts.
+          </p>
+          <p>
+            El primer día de clases será el
+            <strong id="fecha">[[fecha]]</strong> a las
+            <strong id="hora">[[hora]]</strong> en el
+            <strong>Sala secreta</strong>.
+          </p>
+          <p>Por favor, traiga consigo lo siguiente:</p>
+        </article>
+      </section>
+      <section class="visible-on-hover">
+        <ul class="hidden">
+          <li>Un sombrero de copa</li>
+          <li>Un traje de gala</li>
+          <li>Un par de zapatos de vestir</li>
+          <li>Un par de zapatos cómodos</li>
+          <li>Un par de calcetines</li>
+          <li>Un par de guantes</li>
+          <li>Un par de calcetines</li>
+        </ul>
+      </section>
+      <section class="visible-on-hover">
+        <article class="hidden">
+          <p>
+            Los estudiantes deberán acudir a la estación de trenes de King's
+            Cross a las <strong>[[hora]]</strong> del
+            <strong>[[fecha]]</strong> para tomar el
+            <strong>[[tren]]</strong> que los llevará a Hogwarts.
+          </p>
+          <p>
+            Esperamos que su estancia en Hogwarts sea provechosa y que disfrute
+            de su tiempo en nuestra escuela.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer class="visible-on-hover">
+      <article class="hidden">
+        <p>Atentamente,</p>
+        <p id="firma">Albus Dumbledore</p>
+        <p>Director</p>
+      </article>
+      <section>
+        <audio id="audio" src="audio/hp.mp3" loop></audio>
+      </section>
+    </footer>
+  </body>
+  <script>
+    const fechaElement = document.getElementById("fecha");
+    const horaElement = document.getElementById("hora");
+
+    const currentDate = new Date();
+
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = currentDate.toLocaleDateString("es-ES", options);
+    const formattedTime = currentDate.toLocaleTimeString("es-ES");
+
+    fechaElement.textContent = formattedDate;
+    horaElement.textContent = formattedTime;
+  </script>
+</html>

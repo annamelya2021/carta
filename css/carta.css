@@ -1,0 +1,120 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: "firma";
+  src: url("../fonts/firma.ttf");
+}
+@font-face {
+  font-family: "titulo";
+  src: url("../fonts/titulo.ttf");
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../img/fondo.jpg");
+  font-size: 1.5em;
+  color: #000000;
+  line-height: 1.76;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2,
+p,
+ul {
+  text-align: center;
+}
+figure {
+  display: flex;
+}
+
+img {
+  width: 50%;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: titulo;
+  margin: 5%;
+}
+
+main {
+  margin: 5%;
+}
+
+footer {
+  margin: 5%;
+}
+
+#firma {
+  font-family: firma;
+  font-size: 3em;
+}
+p,
+li {
+  font-family: cursive;
+  font-weight: bold;
+}
+article p:first-child::first-letter {
+  font-size: 2em;
+  font-family: titulo;
+}
+
+p:hover,
+li:hover,
+h1:hover,
+h2:hover {
+  color: #8c8c09;
+}
+
+html {
+  cursor: url(../img/varita.png), auto;
+  animation: transform_palito 2s infinite;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 3s ease-in;
+}
+
+.visible-on-hover:hover .hidden {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes transform_palito {
+  0% {
+    cursor: url(../img/varita.png), auto;
+  }
+  50% {
+    cursor: url(../img/varita1.png), auto;
+  }
+  100% {
+    cursor: url(../img/varita2.png), auto;
+  }
+}
